@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // API key is injected by the execution environment
-
+console.log("API KEY:", apiKey);
 // --- API Utility ---
 const generateGeminiContent = async (prompt, retryCount = 0) => {
     const maxRetries = 5;
@@ -35,7 +35,7 @@ const generateGeminiContent = async (prompt, retryCount = 0) => {
     };
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

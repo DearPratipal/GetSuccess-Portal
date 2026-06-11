@@ -1,7 +1,3 @@
-GetSuccess Portal
-Timer
-Category
-<Header
-  timeRemaining={timeRemaining}
-  category={config.category}
-/>
+export default function Header() {
+  return null;
+}
